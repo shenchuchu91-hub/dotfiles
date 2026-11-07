@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/OS-Nyarch%20Linux-1793d1?style=for-the-badge&logo=arch-linux&logoColor=white" />
   <img src="https://img.shields.io/badge/WM-Niri%20Wayland-FF69B4?style=for-the-badge&logo=wayland&logoColor=white" />
   <img src="https://img.shields.io/badge/Shell-Fish%20Shell-008080?style=for-the-badge&logo=gnubash&logoColor=white" />
-  <img src="https://img.shields.io/badge/Theme-Dank%20Material%20You-8A2BE2?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Anime-Nyarch%20Aesthetic-ffb6c1?style=for-the-badge&logo=safari&logoColor=white" />
 </p>
 
@@ -16,9 +16,23 @@
 
 ---
 
+## 💻 硬件兼容性与参考配置规格 (System Specs & Requirements)
+
+为便于评估本套 Dotfiles 的实际复现效果，下表列出了**作者实测验证机型**与**建议最低运行基准**：
+
+| 项目 | 测试验证参考机型 (Tested Environment) | 最低运行参考门槛 (Minimum Requirements) |
+| :--- | :--- | :--- |
+| **操作系统** | Nyarch Linux x86_64 (Linux Kernel 7.x) | Arch Linux 官方版或任何 Arch-based 发行版 |
+| **处理器 (CPU)** | 现代 12~16 线程处理器 (如 i7-13620H) | 4 核心 8 线程 64 位 x86_64 处理器 |
+| **显卡 (GPU)** | NVIDIA RTX 5060 Laptop (支持 Prime 独显直连) | 支持 Vulkan 1.3 / OpenGL 4.5 的显卡或主流核显 |
+| **显示规格** | 1080p @ 144Hz IPS 高刷新率屏 | 1080p @ 60Hz 标准显示屏 |
+| **运行内存** | 16 GB DDR5 | 8 GB RAM (日常流畅运行) |
+
+---
+
 ## 🎨 概览特性 (Highlights)
 
-- 🪟 **窗口管理器**: [Niri](https://github.com/YaLTeR/niri) — 现代 Wayland 卷轴式平铺窗口管理器，支持丝滑动画与模糊特效
+- 🪟 **窗口管理器**: [Niri](https://github.com/YaLTeR/niri) — 现代 Wayland 卷轴式平铺窗口管理器，支持丝滑弹簧动画与毛玻璃特效
 - 🐚 **Shell**: [Fish Shell](https://fishshell.com/) + [Starship](https://starship.rs/) 渐变色彩 Powerline 提示符
 - 💻 **终端**: Kitty / Foot (极速轻量渲染 + 材质主题)
 - 🎨 **主题体系**: Matugen 动态取色 + Dank Material Shell (DMS)
@@ -44,7 +58,10 @@ chmod +x install.sh
 ./install.sh
 ```
 
-> 脚本会自动检测现有配置并建立备份至 `~/.config_backup_*`，安全无痛迁移！
+### 🛡️ 安全备份与无痛恢复机制：
+- **无损软链接**：安装脚本默认通过建立符号链接（`ln -s`）接入配置，不硬性修改源码；
+- **智能自动备份**：若检测到 `~/.config` 下已有现存同名配置，脚本会自动将其完整移动备份至 `~/.config_backup_时间戳/`，绝不直接覆盖或删除个人数据；
+- **一键回滚**：如需恢复原有配置，只需删除新建的软链接，将备份目录还原回 `~/.config` 即可。
 
 ---
 
@@ -77,3 +94,4 @@ chmod +x install.sh
 - [Niri Window Manager](https://github.com/YaLTeR/niri)
 - [Starship Cross-Shell Prompt](https://starship.rs/)
 - [DankMaterialShell](https://github.com/Apostolique/DankMaterialShell)
+- License: [MIT License](LICENSE)
