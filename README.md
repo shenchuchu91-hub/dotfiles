@@ -88,10 +88,11 @@ chmod +x install.sh
 
 ---
 
-## 🌸 鸣谢 (Credits)
+## 🌸 鸣谢与安全守则 (Credits & Disclaimer)
 
 - [Nyarch Linux](https://nyarchlinux.moe/)
 - [Niri Window Manager](https://github.com/YaLTeR/niri)
 - [Starship Cross-Shell Prompt](https://starship.rs/)
 - [DankMaterialShell](https://github.com/Apostolique/DankMaterialShell)
 - License: [MIT License](LICENSE)
+- 安全与免责规范: [全局免责声明与通用安全规范 (Disclaimer)](https://github.com/shenchuchu91-hub/disclaimer)
