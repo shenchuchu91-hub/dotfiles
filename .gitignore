@@ -1,0 +1,20 @@
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+*.backup*
+*~
+
+# Fish runtime data
+fish_variables
+fish_history
+
+# Cache directories
+.cache/
+
+# System specific / sensitive
+id_rsa*
+id_ed25519*
+*.key
+*.pem
+*.token
