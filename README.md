@@ -1,4 +1,4 @@
-# ✨ Nyarch Linux & Niri Rice Dotfiles ✨
+# Nyarch Linux & Niri Rice Dotfiles
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="10" />
@@ -7,11 +7,11 @@
   <img src="https://img.shields.io/badge/WM-Niri%20Wayland-FF69B4?style=for-the-badge&logo=wayland&logoColor=white" />
   <img src="https://img.shields.io/badge/Shell-Fish%20Shell-008080?style=for-the-badge&logo=gnubash&logoColor=white" />
   <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Anime-Nyarch%20Aesthetic-ffb6c1?style=for-the-badge&logo=safari&logoColor=white" />
+  <img src="https://img.shields.io/badge/Aesthetic-Anime%20%26%20Moe-ffb6c1?style=for-the-badge" />
 </p>
 
 <p align="center">
-  <i>🌸 专为二次元萌系、极客效率打造的 Arch Linux + Niri 丝滑无限横向滚动平铺桌面环境配置 🌸</i>
+  <i>Nyarch / Arch Linux 个人桌面环境配置 · Niri 卷轴平铺窗口管理器 · Fish Shell 与 Material 动态美化</i>
 </p>
 
 ---
