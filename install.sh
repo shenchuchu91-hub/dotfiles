@@ -79,7 +79,6 @@ if command -v pacman >/dev/null 2>&1; then
             cava
             yazi
             fuzzel
-            wlogout
             satty
             matugen
             fcitx5
@@ -95,7 +94,12 @@ if command -v pacman >/dev/null 2>&1; then
             lolcat
         )
         echo -e "${CYAN}[*] 正在通过 pacman 安装基础组件...${NC}"
-        sudo pacman -S --needed --noconfirm "${PKGS[@]}" || echo -e "${YELLOW}[!] 部分包可能需要 AUR 或已安装，已跳过${NC}"
+        sudo pacman -S --needed --noconfirm "${PKGS[@]}" || {
+            echo -e "${YELLOW}[!] 正在逐项容错检查安装...${NC}"
+            for pkg in "${PKGS[@]}"; do
+                sudo pacman -S --needed --noconfirm "$pkg" 2>/dev/null || true
+            done
+        }
 
         if [ -f "$DOTFILES_DIR/pkglist-aur.txt" ] && command -v yay >/dev/null 2>&1; then
             echo -e "${CYAN}[*] 检测到 yay，安装 AUR 专有组件...${NC}"
