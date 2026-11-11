@@ -102,11 +102,13 @@ if command -v pacman >/dev/null 2>&1; then
         }
 
         if [ -f "$DOTFILES_DIR/pkglist-aur.txt" ] && command -v yay >/dev/null 2>&1; then
-            echo -e "${CYAN}[*] 检测到 yay，安装 AUR 专有组件...${NC}"
-            yay -S --needed --noconfirm - < "$DOTFILES_DIR/pkglist-aur.txt" || true
+            echo -e "${CYAN}[*] 检测到 yay，准备安装 AUR 专有组件...${NC}"
+            echo -e "${YELLOW}[!] AUR 软件包由社区维护、默认未经官方审查。安装前请自行检查 PKGBUILD，确认脚本内容安全后再继续。${NC}"
+            yay -S --needed - < "$DOTFILES_DIR/pkglist-aur.txt" || true
         elif [ -f "$DOTFILES_DIR/pkglist-aur.txt" ] && command -v paru >/dev/null 2>&1; then
-            echo -e "${CYAN}[*] 检测到 paru，安装 AUR 专有组件...${NC}"
-            paru -S --needed --noconfirm - < "$DOTFILES_DIR/pkglist-aur.txt" || true
+            echo -e "${CYAN}[*] 检测到 paru，准备安装 AUR 专有组件...${NC}"
+            echo -e "${YELLOW}[!] AUR 软件包由社区维护、默认未经官方审查。安装前请自行检查 PKGBUILD，确认脚本内容安全后再继续。${NC}"
+            paru -S --needed - < "$DOTFILES_DIR/pkglist-aur.txt" || true
         fi
     fi
 fi

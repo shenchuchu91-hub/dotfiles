@@ -63,6 +63,10 @@ chmod +x install.sh
 - **智能自动备份**：若检测到 `~/.config` 下已有现存同名配置，脚本会自动将其完整移动备份至 `~/.config_backup_时间戳/`，绝不直接覆盖或删除个人数据；
 - **一键回滚**：如需恢复原有配置，只需删除新建的软链接，将备份目录还原回 `~/.config` 即可。
 
+### ⚠️ 使用前请替换书签中的用户名
+
+GTK 的书签文件（`.config/gtk-3.0/bookmarks`）**不支持** `$HOME` 等变量。仓库里使用 `/home/USER` 作为占位路径。请在安装前或安装后，把该文件中的 `USER` 替换成你的实际用户名，否则文件管理器书签会指向不存在的目录。
+
 ---
 
 ## ⌨️ 常用快捷键速查 (Niri Keybindings)
@@ -94,5 +98,16 @@ chmod +x install.sh
 - [Niri Window Manager](https://github.com/YaLTeR/niri)
 - [Starship Cross-Shell Prompt](https://starship.rs/)
 - [DankMaterialShell](https://github.com/Apostolique/DankMaterialShell)
-- License: [MIT License](LICENSE)
 - 安全与免责规范: [全局免责声明与通用安全规范 (Disclaimer)](https://github.com/shenchuchu91-hub/disclaimer)
+
+## 致谢与第三方来源
+
+本仓库的桌面配置、窗口规则与部分安装脚本整理或改编自以下上游，谨致谢意：
+
+- [@SHORiN-KiWATA（Shorin 大老师）](https://github.com/SHORiN-KiWATA)：[shorin-arch-setup](https://github.com/SHORiN-KiWATA/shorin-arch-setup)（AGPL-3.0）、[shorin-niri](https://github.com/SHORiN-KiWATA/shorin-niri)、[shorin-dms-hyprniri](https://github.com/SHORiN-KiWATA/shorin-dms-hyprniri)
+- [trygveaa/kitty-kitten-search](https://github.com/trygveaa/kitty-kitten-search)（`.config/kitty/search.py`，GPL-3.0）
+- [vinceliuice/Colloid-kde](https://github.com/vinceliuice/Colloid-kde)（Kvantum 的 Colloid / MaterialAdw 主题，GPL-3.0）
+
+**许可证范围**：[MIT License](LICENSE) **仅适用于本仓库的原创部分**。第三方文件继续沿用各自原有许可证，详见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
+
+其中来自 `shorin-niri`、`shorin-dms-hyprniri` 的内容上游尚未声明许可证，已向作者致谢并暂予保留；如需移除请联系维护者。
