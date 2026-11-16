@@ -1,22 +1,10 @@
-# Nyarch Linux & Niri Rice Dotfiles
+# dotfiles
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/misc/transparent.png" height="10" />
-  <br>
-  <img src="https://img.shields.io/badge/OS-Nyarch%20Linux-1793d1?style=for-the-badge&logo=arch-linux&logoColor=white" />
-  <img src="https://img.shields.io/badge/WM-Niri%20Wayland-FF69B4?style=for-the-badge&logo=wayland&logoColor=white" />
-  <img src="https://img.shields.io/badge/Shell-Fish%20Shell-008080?style=for-the-badge&logo=gnubash&logoColor=white" />
-  <img src="https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Aesthetic-Anime%20%26%20Moe-ffb6c1?style=for-the-badge" />
-</p>
-
-<p align="center">
-  <i>Nyarch / Arch Linux 个人桌面环境配置 · Niri 卷轴平铺窗口管理器 · Fish Shell 与 Material 动态美化</i>
-</p>
+niri tiling, fish shell, starship, kitty — non-destructive symlink deploy.
 
 ---
 
-## 💻 硬件兼容性与参考配置规格 (System Specs & Requirements)
+## 硬件兼容性与参考配置规格 (System Specs & Requirements)
 
 为便于评估本套 Dotfiles 的实际复现效果，下表列出了**作者实测验证机型**与**建议最低运行基准**：
 
@@ -30,21 +18,21 @@
 
 ---
 
-## 🎨 概览特性 (Highlights)
+## 概览特性 (Highlights)
 
-- 🪟 **窗口管理器**: [Niri](https://github.com/YaLTeR/niri) — 现代 Wayland 卷轴式平铺窗口管理器，支持丝滑弹簧动画与毛玻璃特效
-- 🐚 **Shell**: [Fish Shell](https://fishshell.com/) + [Starship](https://starship.rs/) 渐变色彩 Powerline 提示符
-- 💻 **终端**: Kitty / Foot (极速轻量渲染 + 材质主题)
-- 🎨 **主题体系**: Matugen 动态取色 + Dank Material Shell (DMS)
-- 📊 **系统监视**: Btop (萌系二次元 / 暗黑霓虹主题)
-- 🎵 **音乐频谱**: CAVA
-- 📂 **文件管理**: Yazi (基于 Rust 的极速终端文件管理器)
-- 🚀 **应用启动器**: Fuzzel (极简轻量 Wayland 启动器)
-- 📸 **截图工具**: Satty + Grim / Slurp
+- **窗口管理器**: [Niri](https://github.com/YaLTeR/niri) — 现代 Wayland 卷轴式平铺窗口管理器，支持丝滑弹簧动画与毛玻璃特效
+- **Shell**: [Fish Shell](https://fishshell.com/) + [Starship](https://starship.rs/) 渐变色彩 Powerline 提示符
+- **终端**: Kitty / Foot (极速轻量渲染 + 材质主题)
+-  **主题体系**: Matugen 动态取色 + Dank Material Shell (DMS)
+- **系统监视**: Btop (暗黑极简主题)
+- **音乐频谱**: CAVA
+- **文件管理**: Yazi (基于 Rust 的极速终端文件管理器)
+- **应用启动器**: Fuzzel (极简轻量 Wayland 启动器)
+- **截图工具**: Satty + Grim / Slurp
 
 ---
 
-## ⚡ 快捷一键安装 (Quick Start)
+## 快捷一键安装 (Quick Start)
 
 在任何新安装的 Arch / Nyarch Linux 系统上，只需打开终端运行以下命令：
 
@@ -58,7 +46,7 @@ chmod +x install.sh
 ./install.sh
 ```
 
-### 🛡️ 安全备份与无痛恢复机制：
+### 安全备份与无痛恢复机制：
 - **无损软链接**：安装脚本默认通过建立符号链接（`ln -s`）接入配置，不硬性修改源码；
 - **智能自动备份**：若检测到 `~/.config` 下已有现存同名配置，脚本会自动将其完整移动备份至 `~/.config_backup_时间戳/`，绝不直接覆盖或删除个人数据；
 - **一键回滚**：如需恢复原有配置，只需删除新建的软链接，将备份目录还原回 `~/.config` 即可。
@@ -69,7 +57,7 @@ GTK 的书签文件（`.config/gtk-3.0/bookmarks`）**不支持** `$HOME` 等变
 
 ---
 
-## ⌨️ 常用快捷键速查 (Niri Keybindings)
+## 常用快捷键速查 (Niri Keybindings)
 
 | 快捷键 | 功能描述 |
 | :--- | :--- |
@@ -85,14 +73,14 @@ GTK 的书签文件（`.config/gtk-3.0/bookmarks`）**不支持** `$HOME` 等变
 
 ---
 
-## 📦 软件包清单 (Package Lists)
+## 软件包清单 (Package Lists)
 
 - [pkglist-native.txt](./pkglist-native.txt): 官方源显式安装包 (通过 `pacman -S`)
 - [pkglist-aur.txt](./pkglist-aur.txt): AUR 社区源安装包 (通过 `yay` / `paru`)
 
 ---
 
-## 🌸 鸣谢与安全守则 (Credits & Disclaimer)
+## 鸣谢与安全守则 (Credits & Disclaimer)
 
 - [Nyarch Linux](https://nyarchlinux.moe/)
 - [Niri Window Manager](https://github.com/YaLTeR/niri)
