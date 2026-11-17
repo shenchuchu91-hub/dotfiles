@@ -4,20 +4,6 @@ niri tiling, fish shell, starship, kitty — non-destructive symlink deploy.
 
 ---
 
-## 硬件兼容性与参考配置规格 (System Specs & Requirements)
-
-为便于评估本套 Dotfiles 的实际复现效果，下表列出了**作者实测验证机型**与**建议最低运行基准**：
-
-| 项目 | 测试验证参考机型 (Tested Environment) | 最低运行参考门槛 (Minimum Requirements) |
-| :--- | :--- | :--- |
-| **操作系统** | Nyarch Linux x86_64 (Linux Kernel 7.x) | Arch Linux 官方版或任何 Arch-based 发行版 |
-| **处理器 (CPU)** | 现代 12~16 线程处理器 (如 i7-13620H) | 4 核心 8 线程 64 位 x86_64 处理器 |
-| **显卡 (GPU)** | NVIDIA RTX 5060 Laptop (支持 Prime 独显直连) | 支持 Vulkan 1.3 / OpenGL 4.5 的显卡或主流核显 |
-| **显示规格** | 1080p @ 144Hz IPS 高刷新率屏 | 1080p @ 60Hz 标准显示屏 |
-| **运行内存** | 16 GB DDR5 | 8 GB RAM (日常流畅运行) |
-
----
-
 ## 概览特性 (Highlights)
 
 - **窗口管理器**: [Niri](https://github.com/YaLTeR/niri) — 现代 Wayland 卷轴式平铺窗口管理器，支持丝滑弹簧动画与毛玻璃特效
