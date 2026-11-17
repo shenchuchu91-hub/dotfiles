@@ -1,3 +1,9 @@
+<div align="center">
+  <img src="./assets/banner.svg" width="100%" alt="Monochrome Banner"/>
+</div>
+
+---
+
 # dotfiles
 
 niri tiling, fish shell, starship, kitty — non-destructive symlink deploy.
@@ -6,8 +12,8 @@ niri tiling, fish shell, starship, kitty — non-destructive symlink deploy.
 
 ## 概览特性 (Highlights)
 
-- **窗口管理器**: [Niri](https://github.com/YaLTeR/niri) — 现代 Wayland 卷轴式平铺窗口管理器，支持丝滑弹簧动画与毛玻璃特效
-- **Shell**: [Fish Shell](https://fishshell.com/) + [Starship](https://starship.rs/) 渐变色彩 Powerline 提示符
+- **窗口管理器**: [Niri](https://github.com/YaLTeR/niri) — 现代 Wayland 卷轴式平铺窗口管理器，支持卷轴物理平铺与视口约束
+- **Shell**: [Fish Shell](https://fishshell.com/) + [Starship](https://starship.rs/) 单色哑光终端提示符
 - **终端**: Kitty / Foot (极速轻量渲染 + 材质主题)
 -  **主题体系**: Matugen 动态取色 + Dank Material Shell (DMS)
 - **系统监视**: Btop (暗黑极简主题)
@@ -85,3 +91,9 @@ GTK 的书签文件（`.config/gtk-3.0/bookmarks`）**不支持** `$HOME` 等变
 **许可证范围**：[MIT License](LICENSE) **仅适用于本仓库的原创部分**。第三方文件继续沿用各自原有许可证，详见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
 
 其中来自 `shorin-niri`、`shorin-dms-hyprniri` 的内容上游尚未声明许可证，已向作者致谢并暂予保留；如需移除请联系维护者。
+
+---
+
+<div align="center">
+  <sub>雨声未停 · 保持冷清 · 独行其道</sub>
+</div>
