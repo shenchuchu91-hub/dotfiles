@@ -1,14 +1,12 @@
-<div align="center">
-  <img src="./assets/banner.svg" width="100%" alt="Monochrome Banner"/>
-</div>
+<p align="center">
+  <img src="./assets/banner.jpg" width="100%" alt="" />
+</p>
 
----
+<p align="center"><sub>雨还在下</sub></p>
 
-# dotfiles
+# 个人配置
 
-niri tiling, fish shell, starship, kitty — non-destructive symlink deploy.
-
----
+niri、fish、starship、kitty。安装脚本用软链接，碰到已有配置会先备份，不直接盖掉。
 
 ## 概览特性 (Highlights)
 
@@ -95,5 +93,5 @@ GTK 的书签文件（`.config/gtk-3.0/bookmarks`）**不支持** `$HOME` 等变
 ---
 
 <div align="center">
-  <sub>雨声未停 · 保持冷清 · 独行其道</sub>
+  <sub>雨还在下</sub>
 </div>
