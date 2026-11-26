@@ -6,92 +6,72 @@
 
 # 个人配置
 
-niri、fish、starship、kitty。安装脚本用软链接，碰到已有配置会先备份，不直接盖掉。
+这台 Arch 上的 niri、fish、starship、kitty。新机器上克隆下来跑脚本。脚本只做软链接，看见已有配置会先挪走。
 
-## 概览特性 (Highlights)
+## 里面有什么
 
-- **窗口管理器**: [Niri](https://github.com/YaLTeR/niri) — 现代 Wayland 卷轴式平铺窗口管理器，支持卷轴物理平铺与视口约束
-- **Shell**: [Fish Shell](https://fishshell.com/) + [Starship](https://starship.rs/) 单色哑光终端提示符
-- **终端**: Kitty / Foot (极速轻量渲染 + 材质主题)
--  **主题体系**: Matugen 动态取色 + Dank Material Shell (DMS)
-- **系统监视**: Btop (暗黑极简主题)
-- **音乐频谱**: CAVA
-- **文件管理**: Yazi (基于 Rust 的极速终端文件管理器)
-- **应用启动器**: Fuzzel (极简轻量 Wayland 启动器)
-- **截图工具**: Satty + Grim / Slurp
+- 窗口：[niri](https://github.com/YaLTeR/niri)
+- Shell：[fish](https://fishshell.com/) + [starship](https://starship.rs/)
+- 终端：kitty / foot
+- 颜色：matugen，外壳是 [Dank Material Shell](https://github.com/Apostolique/DankMaterialShell)
+- 监控：btop
+- 频谱：cava
+- 文件：yazi
+- 启动器：fuzzel
+- 截图：satty + grim / slurp
 
----
+## 安装
 
-## 快捷一键安装 (Quick Start)
-
-在任何新安装的 Arch / Nyarch Linux 系统上，只需打开终端运行以下命令：
+Arch 或 Nyarch 上：
 
 ```bash
-# 1. 克隆本仓库到用户目录
 git clone https://github.com/shenchuchu91-hub/dotfiles.git ~/dotfiles
-
-# 2. 进入目录并运行自动化安装脚本
 cd ~/dotfiles
 chmod +x install.sh
 ./install.sh
 ```
 
-### 安全备份与无痛恢复机制：
-- **无损软链接**：安装脚本默认通过建立符号链接（`ln -s`）接入配置，不硬性修改源码；
-- **智能自动备份**：若检测到 `~/.config` 下已有现存同名配置，脚本会自动将其完整移动备份至 `~/.config_backup_时间戳/`，绝不直接覆盖或删除个人数据；
-- **一键回滚**：如需恢复原有配置，只需删除新建的软链接，将备份目录还原回 `~/.config` 即可。
+脚本做三件事：
 
-### ⚠️ 使用前请替换书签中的用户名
+1. `~/.config` 里同名目录挪到 `~/.config_backup_时间戳/`，不直接删。
+2. 用 `ln -s` 把仓库里的配置链过去。
+3. 问你要不要用 `pacman` / `yay` 把缺的包装上。
 
-GTK 的书签文件（`.config/gtk-3.0/bookmarks`）**不支持** `$HOME` 等变量。仓库里使用 `/home/USER` 作为占位路径。请在安装前或安装后，把该文件中的 `USER` 替换成你的实际用户名，否则文件管理器书签会指向不存在的目录。
+要退回去：删掉新建的链接，把备份目录挪回 `~/.config`。
 
----
+GTK 书签 `.config/gtk-3.0/bookmarks` 不认 `$HOME`。仓库里写的是 `/home/USER`。装之前或装之后把 `USER` 换成你的用户名，不然文件管理器的书签是空的。
 
-## 常用快捷键速查 (Niri Keybindings)
+## 键
 
-| 快捷键 | 功能描述 |
-| :--- | :--- |
-| <kbd>Super</kbd> + <kbd>Return</kbd> | 打开终端 (Kitty / Foot) |
-| <kbd>Super</kbd> + <kbd>D</kbd> | 打开应用启动器 (Fuzzel) |
-| <kbd>Super</kbd> + <kbd>Q</kbd> | 关闭当前窗口 |
-| <kbd>Super</kbd> + <kbd>H</kbd> / <kbd>L</kbd> | 左右切换聚集窗口 |
-| <kbd>Super</kbd> + <kbd>J</kbd> / <kbd>K</kbd> | 上下移动/卷轴切换 |
-| <kbd>Super</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd> / <kbd>L</kbd> | 左右移动窗口位置 |
-| <kbd>Super</kbd> + <kbd>F</kbd> | 窗口最大化 / 全屏切换 |
-| <kbd>Super</kbd> + <kbd>Print</kbd> | 截屏与标注 (Satty) |
-| <kbd>Super</kbd> + <kbd>X</kbd> | 打开注销菜单 (Wlogout) |
+| 键 | 做什么 |
+| --- | --- |
+| Super + Return | 终端 |
+| Super + D | Fuzzel |
+| Super + Q | 关窗口 |
+| Super + H / L | 左右切换 |
+| Super + J / K | 卷轴上下 |
+| Super + Shift + H / L | 挪窗口 |
+| Super + F | 全屏 |
+| Super + Print | 截图 |
+| Super + X | 注销菜单 |
 
----
+## 包列表
 
-## 软件包清单 (Package Lists)
+- [pkglist-native.txt](./pkglist-native.txt)：官方源，`pacman -S`
+- [pkglist-aur.txt](./pkglist-aur.txt)：AUR，`yay` 或 `paru`
 
-- [pkglist-native.txt](./pkglist-native.txt): 官方源显式安装包 (通过 `pacman -S`)
-- [pkglist-aur.txt](./pkglist-aur.txt): AUR 社区源安装包 (通过 `yay` / `paru`)
+## 这些不是我从零写的
 
----
+窗口规则和一部分安装脚本整理自：
 
-## 鸣谢与安全守则 (Credits & Disclaimer)
-
-- [Nyarch Linux](https://nyarchlinux.moe/)
-- [Niri Window Manager](https://github.com/YaLTeR/niri)
-- [Starship Cross-Shell Prompt](https://starship.rs/)
-- [DankMaterialShell](https://github.com/Apostolique/DankMaterialShell)
-- 安全与免责规范: [全局免责声明与通用安全规范 (Disclaimer)](https://github.com/shenchuchu91-hub/disclaimer)
-
-## 致谢与第三方来源
-
-本仓库的桌面配置、窗口规则与部分安装脚本整理或改编自以下上游，谨致谢意：
-
-- [@SHORiN-KiWATA（Shorin 大老师）](https://github.com/SHORiN-KiWATA)：[shorin-arch-setup](https://github.com/SHORiN-KiWATA/shorin-arch-setup)（AGPL-3.0）、[shorin-niri](https://github.com/SHORiN-KiWATA/shorin-niri)、[shorin-dms-hyprniri](https://github.com/SHORiN-KiWATA/shorin-dms-hyprniri)
+- [SHORiN-KiWATA](https://github.com/SHORiN-KiWATA)：[shorin-arch-setup](https://github.com/SHORiN-KiWATA/shorin-arch-setup)（AGPL-3.0）、[shorin-niri](https://github.com/SHORiN-KiWATA/shorin-niri)、[shorin-dms-hyprniri](https://github.com/SHORiN-KiWATA/shorin-dms-hyprniri)
 - [trygveaa/kitty-kitten-search](https://github.com/trygveaa/kitty-kitten-search)（`.config/kitty/search.py`，GPL-3.0）
-- [vinceliuice/Colloid-kde](https://github.com/vinceliuice/Colloid-kde)（Kvantum 的 Colloid / MaterialAdw 主题，GPL-3.0）
+- [vinceliuice/Colloid-kde](https://github.com/vinceliuice/Colloid-kde)（Kvantum 主题，GPL-3.0）
 
-**许可证范围**：[MIT License](LICENSE) **仅适用于本仓库的原创部分**。第三方文件继续沿用各自原有许可证，详见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
+[MIT](LICENSE) 只覆盖这个仓库里我自己写的部分。别人的文件还是原来的许可证，见 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
 
-其中来自 `shorin-niri`、`shorin-dms-hyprniri` 的内容上游尚未声明许可证，已向作者致谢并暂予保留；如需移除请联系维护者。
+`shorin-niri` 和 `shorin-dms-hyprniri` 上游还没写许可证。先留着并注明出处。要撤就说。
 
----
+另外用到的上游：[Nyarch](https://nyarchlinux.moe/)、[niri](https://github.com/YaLTeR/niri)、[starship](https://starship.rs/)。
 
-<div align="center">
-  <sub>雨还在下</sub>
-</div>
+<p align="center"><sub>雨还在下</sub></p>
