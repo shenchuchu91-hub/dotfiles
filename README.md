@@ -1,8 +1,4 @@
-<p align="center">
-  <img src="./assets/banner.jpg" width="100%" alt="" />
-</p>
-
-<p align="center"><sub>雨还在下</sub></p>
+<img alt="dotfiles · 雨还在下" src="./assets/header.svg" width="100%" />
 
 # 个人配置
 
@@ -75,3 +71,5 @@ GTK 书签 `.config/gtk-3.0/bookmarks` 不认 `$HOME`。仓库里写的是 `/hom
 另外用到的上游：[Nyarch](https://nyarchlinux.moe/)、[niri](https://github.com/YaLTeR/niri)、[starship](https://starship.rs/)。
 
 <p align="center"><sub>雨还在下</sub></p>
+
+<img alt="雨还在下 · 屏幕常亮" src="./assets/footer.svg" width="100%" />
